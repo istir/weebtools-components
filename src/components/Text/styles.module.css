@@ -1,0 +1,10 @@
+ .text {
+     --size: 16px;
+     font-size: var(--size);
+     /* color: black; */
+ }
+
+ /*
+:global(body.dark) .text {
+    color: white;
+} */
