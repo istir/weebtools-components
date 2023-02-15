@@ -1,13 +1,12 @@
 import { memo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import ForegroundContainer from '../ForegroundContainer/ForegroundContainer';
+import { styles } from './styles';
 
 import classes from './styles.module.css';
 import { Props } from './types';
 
-import { isMobileSelector } from '@/store/layout/layoutSelector';
 
 function Input({ getValue, ...props }: Props) {
-  const isMobile = useSelector(isMobileSelector);
   const [inputValue, setInputValue] = useState<string>(
     props.value?.toString() || props.defaultValue?.toString() || ''
   );
@@ -18,16 +17,19 @@ function Input({ getValue, ...props }: Props) {
   };
 
   return (
+    <ForegroundContainer>
     <input
-      type="text"
-      className={`${classes.container} ${isMobile ? classes.mobile : ''}`}
+        type="text"
+        className='input'
+      style={styles.input}
       {...props}
       value={inputValue}
       onChange={(e) => {
         props.onChange?.(e);
         onChangeHandler(e);
       }}
-    />
+      />
+      </ForegroundContainer>
   );
 }
 

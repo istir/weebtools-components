@@ -1,60 +1,46 @@
-import { memo } from 'react';
-import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { CSSProperties, memo } from 'react';
+import { combineStyle, EMPTY_STYLE } from '../../styles/theme';
+import Text from '../Text/Text';
+import { styles } from './styles';
 
-import styles from './styles.module.css';
+import { Props } from './types';
 
-import { Props } from '@/components/Base/Button/types';
-import { isMobileSelector } from '@/store/layout/layoutSelector';
 function Button({
-  buttonStyle,
+  buttonStyle={},
   children,
-  buttonType = 'normal',
-  square,
+  buttonType = 'plain',
+  buttonState='inactive',
+  size = "medium",
+  label,
   href,
+  icon,
   download,
+  badge,
   ...props
-}: Omit<Props, 'className' | 'style'>) {
-  const isMobile = useSelector(isMobileSelector);
+}: Props) {
 
-  function getClassName() {
-    switch (buttonType) {
-      case 'normal':
-        return styles.normal;
-      case 'ghost':
-        return styles.ghost;
-
-      default:
-        break;
-    }
+  function getStyle(prop: Props['size'] | Props['buttonType']|Props['buttonState']):CSSProperties {
+    if(!prop) return EMPTY_STYLE
+    return styles?.[prop]
   }
-  if (href) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        className={`${getClassName()} ${isMobile ? styles.mobile : ''} ${
-          square ? styles.square : ''
-        }`}
-        style={buttonStyle}
-        rel="noreferrer"
-        download={download}
-      >
-        {children}
-      </a>
-    );
-  } else {
-    return (
+  return (
+    <div className='button-container' style={styles.container}>
+      {badge ? <div style={styles.badge}>{badge}</div>:null}
       <button
-        className={`${getClassName()} ${isMobile ? styles.mobile : ''} ${
-          square ? styles.square : ''
-        }`}
-        style={buttonStyle}
+        className='button'
+        style={combineStyle([styles.button,getStyle(buttonType),getStyle(size),!children?styles.square:EMPTY_STYLE,getStyle(buttonState),buttonStyle])}
         {...props}
       >
-        {children}
+        <div style={styles.contentContainer}>
+          {icon?<FontAwesomeIcon icon={icon}/>:null}
+          {children}
+        </div>
       </button>
+      {label ? <Text style={styles.label}>{label}</Text> : null}
+      </div>
     );
-  }
+  
 }
 
 export default memo(Button);

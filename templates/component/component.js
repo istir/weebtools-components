@@ -1,7 +1,7 @@
 export const componentTemplate = (componentName) => `import { memo } from 'react'
 
 import styles from './styles';
-import { combineStyle } from "@/styles/colors";
+import { combineStyle } from '../../styles/theme';
 import { Props } from './types'
 
 function ${componentName}({ }:Props) {

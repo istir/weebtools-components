@@ -7,7 +7,7 @@ import { stylesTemplate } from './styles.js'
 import { typesTemplate } from './types.js'
 
 const componentName = process.argv[2]
-const location = `./src/${process.argv[3] || 'components'}`
+const location = `./${process.argv[3] || 'components'}`
 if (!componentName) {
     console.error('No component name provided')
 } else {

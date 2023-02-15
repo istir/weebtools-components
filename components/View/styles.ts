@@ -1,4 +1,4 @@
-export const stylesTemplate = () => `import { Styles } from "../../styles/theme"
+import { Styles } from "@/styles/colors"
 
 const styles: Styles = {
     container: {
@@ -7,4 +7,3 @@ const styles: Styles = {
 }
 
 export default styles
-`
