@@ -70,6 +70,7 @@ export const styles = createStyle({
     display: "flex",
     gap: 5,
     justifyContent: "center",
+    alignItems:'center'
   },
   spaceContainer: {
     justifyContent: 'space-between',
