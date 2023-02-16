@@ -26,6 +26,10 @@ export const FlexDirection = {
   column: "column" as "column",
   row: "row" as "row",
 };
+export const FlexWrap = {
+  wrap: "wrap" as "wrap",
+  noWrap: "noWrap" as "noWrap",
+};
 export const TextAlign = {
   left: "left" as "left",
   right: "right" as "right",
