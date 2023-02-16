@@ -95,5 +95,13 @@ export const styles = createStyle({
   },
   rotated: {
     transform:'rotate(90deg)'
+  },
+  containerStretch: {
+    width: '100%',
+  },
+  buttonStretch: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:'100%'
   }
 });

@@ -21,6 +21,7 @@ function Button({
   rightIconRotated = false,
   containerStyle = EMPTY_STYLE,
   contentStyle = EMPTY_STYLE,
+  stretch = false,
   ...props
 }: Props) {
   function getIconSize() {
@@ -45,7 +46,11 @@ function Button({
   return (
     <div
       className="button-container"
-      style={combineStyle([styles.container, containerStyle])}
+      style={combineStyle([
+        styles.container,
+        stretch ? styles.containerStretch : EMPTY_STYLE,
+        containerStyle,
+      ])}
     >
       {badge ? <div style={styles.badge}>{badge}</div> : null}
       <button
@@ -56,6 +61,7 @@ function Button({
           getStyle(size),
           !children ? styles.square : EMPTY_STYLE,
           getStyle(buttonState),
+          stretch ? styles.buttonStretch : EMPTY_STYLE,
           style,
         ])}
         {...props}

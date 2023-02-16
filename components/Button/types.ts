@@ -6,7 +6,7 @@ export type Props = {
   badge?: string;
   buttonState?: "active" | "inactive";
   buttonType?: "plain" | "gray" | "tinted" | "filled";
-  
+  stretch?: boolean;
   children?: JSX.Element;
   containerStyle?: React.CSSProperties;
   contentStyle?: React.CSSProperties;

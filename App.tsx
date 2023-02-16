@@ -24,7 +24,7 @@ function App() {
           <Button buttonType="gray" size="large">
             Gray button
           </Button>
-          <Button buttonType="tinted" badge={"1"}>
+          <Button buttonType="tinted" badge={"1"} stretch>
             Tinted button
           </Button>
           <Button
