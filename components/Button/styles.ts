@@ -29,7 +29,6 @@ export const styles = createStyle({
     paddingLeft: 10,
     paddingRight: 10,
     transitionDuration: TRANSITION_DURATION,
-    transitionProperty: "background-color, color, filter, box-shadow",
     transitionTimingFunction: TRANSITION_TIMING,
   },
   square: {
@@ -72,6 +71,10 @@ export const styles = createStyle({
     gap: 5,
     justifyContent: "center",
   },
+  spaceContainer: {
+    justifyContent: 'space-between',
+    alignItems:'center'
+  },
   badge: {
     position: Position.absolute,
     zIndex: 2,
@@ -86,4 +89,11 @@ export const styles = createStyle({
     justifyContent: "center",
     alignItems: "center",
   },
+  rightIcon: {
+    transitionDuration: TRANSITION_DURATION,
+    transitionTimingFunction:TRANSITION_TIMING
+  },
+  rotated: {
+    transform:'rotate(90deg)'
+  }
 });

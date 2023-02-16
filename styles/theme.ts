@@ -26,6 +26,11 @@ export const FlexDirection = {
   column: "column" as "column",
   row: "row" as "row",
 };
+export const TextAlign = {
+  left: "left" as "left",
+  right: "right" as "right",
+  center:"center" as "center"
+}
 
 export const Position = {
   absolute: "absolute" as "absolute",

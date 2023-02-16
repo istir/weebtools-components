@@ -3,14 +3,18 @@ import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import React, { ButtonHTMLAttributes } from "react";
 
 export type Props = {
-  buttonStyle?: React.CSSProperties;
-  children?: JSX.Element;
-  buttonType?: "plain" | "gray" | "tinted" | "filled";
-  buttonState?: "active" | "inactive";
-  size: "small" | "medium" | "large";
-  href?: string;
-  label?: string;
-  download?: string;
-  icon?: IconDefinition;
   badge?: string;
+  buttonState?: "active" | "inactive";
+  buttonType?: "plain" | "gray" | "tinted" | "filled";
+  
+  children?: JSX.Element;
+  containerStyle?: React.CSSProperties;
+  contentStyle?: React.CSSProperties;
+  download?: string;
+  href?: string;
+  icon?: IconDefinition;
+  label?: string;
+  rightIcon?: IconDefinition;
+  rightIconRotated?: boolean;
+  size?: "small" | "medium" | "large";
 } & ButtonHTMLAttributes<HTMLButtonElement>;

@@ -1,4 +1,46 @@
 :root {
+
+  /* main */
+  --main-ref-100-light: #994061;
+  --main-ref-200-light: #a64e6d;
+  --main-ref-300-light: #b25c79;
+  --main-ref-400-light: #bf6a86;
+  --main-ref-500-light: #cc7893;
+  --main-ref-600-light: #d886a0;
+  --main-ref-700-light: #e594ad;
+  --main-ref-800-light: #f2a2ba;
+  --main-ref-900-light: #ffb1c8;
+
+  --main-ref-100-dark: var(--main-ref-900-light);
+  --main-ref-200-dark: var(--main-ref-800-light);
+  --main-ref-300-dark: var(--main-ref-700-light);
+  --main-ref-400-dark: var(--main-ref-600-light);
+  --main-ref-500-dark: var(--main-ref-500-light);
+  --main-ref-600-dark: var(--main-ref-400-light);
+  --main-ref-700-dark: var(--main-ref-300-light);
+  --main-ref-800-dark: var(--main-ref-200-light);
+  --main-ref-900-dark: var(--main-ref-100-light);
+
+  --secondary-ref-100-light: #f5e5e8;
+  --secondary-ref-200-light: #dacbce;
+  --secondary-ref-300-light: #bfb1b4;
+  --secondary-ref-400-light: #a5989b;
+  --secondary-ref-500-light: #8b7f83;
+  --secondary-ref-600-light: #73686b;
+  --secondary-ref-700-light: #5b5154;
+  --secondary-ref-800-light: #443b3f;
+  --secondary-ref-900-light: #2f272a;
+
+  --secondary-ref-100-dark: var(--secondary-ref-900-light);
+  --secondary-ref-200-dark: var(--secondary-ref-800-light);
+  --secondary-ref-300-dark: var(--secondary-ref-700-light);
+  --secondary-ref-400-dark: var(--secondary-ref-600-light);
+  --secondary-ref-500-dark: var(--secondary-ref-500-light);
+  --secondary-ref-600-dark: var(--secondary-ref-400-light);
+  --secondary-ref-700-dark: var(--secondary-ref-300-light);
+  --secondary-ref-800-dark: var(--secondary-ref-200-light);
+  --secondary-ref-900-dark: var(--secondary-ref-100-light);
+
   --md-source: #933b5c;
   /* primary */
   --md-ref-palette-primary0: #000000;
@@ -124,6 +166,7 @@
   --md-sys-color-surface-light: #faeeef;
   --md-sys-color-on-surface-light: #201a1b;
   --md-sys-color-surface-variant-light: #f2dde1;
+  --md-sys-color-surface-variant-2-light: hsl(349, 45%, 93%);
   --md-sys-color-on-surface-variant-light: #514347;
   --md-sys-color-outline-light: #837377;
   --md-sys-color-inverse-on-surface-light: #faeeef;
@@ -155,6 +198,7 @@
   --md-sys-color-surface-dark: #201a1b;
   --md-sys-color-on-surface-dark: #ebe0e1;
   --md-sys-color-surface-variant-dark: #514347;
+  --md-sys-color-surface-variant-2-dark: hsl(343, 9%, 17%);
   --md-sys-color-on-surface-variant-dark: #d5c2c6;
   --md-sys-color-outline-dark: #9e9e9e;
   --md-sys-color-inverse-on-surface-dark: #202020;

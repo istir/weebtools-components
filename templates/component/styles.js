@@ -1,10 +1,12 @@
-export const stylesTemplate = () => `import { Styles } from "../../styles/theme"
+export const stylesTemplate = () => `
+import { createStyle } from "../../styles/theme";
 
-const styles: Styles = {
-    container: {
-        
-    }
-}
+const strokeWidth = 2;
+export const styles = createStyle({
+  container: {
+
+  }
+});
 
 export default styles
 `

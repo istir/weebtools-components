@@ -50,7 +50,7 @@ export const styles = createStyle({
     marginLeft: margin,
   },
   pillChecked: {
-    backgroundColor: Colors.primaryContainer,
+    backgroundColor: Colors.main700,
     transform: `translateX(${width - height - margin}px)`,
   },
   pillUnchecked: {

@@ -47,17 +47,17 @@ a {
 }
 
 
-.foreground:focus-within {
-
+/* .foreground:focus-within { */
+.foreground:not(:has(button)):focus-within {
   background-color: var(--focus-background-color) !important;
   color: var(--focus-color) !important;
 }
 
-.foreground-container>*:nth-child(n) {
+.foreground-container:not(.row, .no-separator)>*:nth-child(n) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.foreground-container>*:last-child {
+.foreground-container:not(.row)>*:last-child {
   border-bottom: none;
 }
 
@@ -72,6 +72,74 @@ span:last-of-type {
   border-bottom: 0;
 } */
 
+
+
+/* .button:active {
+  filter: saturate(1.7);
+  color: #f00 !important;
+} */
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: calc(0.66 * var(--size));
+  }
+
+  50% {
+    transform: rotate(720deg);
+    stroke-dashoffset: calc(3.14 * var(--size));
+  }
+
+  100% {
+    transform: rotate(1080deg);
+    stroke-dashoffset: calc(0.66 * var(--size));
+  }
+}
+
+
+.ps-sidebar-root {
+  border: none !important;
+}
+
+.ps-sidebar-container {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.ps-menu-button {
+  background-color: var(--sidebar-button);
+  transition-duration: var(--sidebar-button-transition-duration);
+  transition-timing-function: var(--sidebar-button-transition-timing);
+}
+
+.ps-submenu-content {
+  background-color: transparent !important;
+}
+
+.ps-menu-label {
+  display: flex;
+  align-self: center;
+  transition: var(--sidebar-button-transition-duration);
+  transition-timing-function: var(--sidebar-button-transition-timing);
+}
+
+.ps-menuitem-root.collapsed .ps-menu-label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ps-menuitem-root .ps-submenu-expand-icon {
+  transform: none !important;
+  top: unset !important;
+  align-self: center;
+}
+
+.ps-submenu-expand-icon>span {
+  width: 10px;
+  height: 10px;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .button:hover {
     filter: saturate(1.5);
@@ -79,7 +147,8 @@ span:last-of-type {
   }
 }
 
-/* .button:active {
-  filter: saturate(1.7);
-  color: #f00 !important;
-} */
+@media (hover:none) {
+  /* .ps-menu-button:hover {
+    background-color: var(--sidebar-button) !important;
+  } */
+}

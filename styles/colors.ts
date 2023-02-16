@@ -1,6 +1,27 @@
 // import { CSSProperties } from "react";
 
 export const Colors = {
+
+    main100:'var(--main-100)',
+    main200:'var(--main-200)',
+    main300:'var(--main-300)',
+    main400:'var(--main-400)',
+    main500:'var(--main-500)',
+    main600:'var(--main-600)',
+    main700:'var(--main-700)',
+    main800:'var(--main-800)',
+    main900:'var(--main-900)',
+
+    secondary100:'var(--secondary-100)',
+    secondary200:'var(--secondary-200)',
+    secondary300:'var(--secondary-300)',
+    secondary400:'var(--secondary-400)',
+    secondary500:'var(--secondary-500)',
+    secondary600:'var(--secondary-600)',
+    secondary700:'var(--secondary-700)',
+    secondary800:'var(--secondary-800)',
+    secondary900:'var(--secondary-900)',
+
   primary: "var(--md-sys-color-primary)",
 
   primaryText: "var(--md-sys-color-on-primary)",
@@ -56,6 +77,8 @@ export const Colors = {
   shadow: "var(--md-sys-color-shadow)",
 
   surfaceTint: "var(--md-sys-color-surface-tint)",
+
+  surfaceVariant2: "var(--md-sys-color-surface-variant-2)",
 
   outlineVariant: "var(--md-sys-color-outline-variant)",
 

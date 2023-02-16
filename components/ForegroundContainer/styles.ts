@@ -15,14 +15,17 @@ const styles: Styles = {
     overflow: "hidden",
     // padding: "0px 5px",
     borderRadius: DEFAULT_BORDER_RADIUS,
-    backgroundColor: Colors.surfaceVariant,
-
+    backgroundColor: Colors.surfaceVariant2,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: FlexDirection.column,
-
+    margin: 5,
     // borderBottom:
+  },
+  row: { flexDirection: FlexDirection.row },
+  column: {
+    flexDirection: FlexDirection.column,
   },
   foreground: {
     minHeight: MIN_CLICKABLE_SIZE * 1.6,
@@ -30,6 +33,9 @@ const styles: Styles = {
     transitionTimingFunction: TRANSITION_TIMING,
     transitionProperty: "background-color, color",
     padding: "0px 5px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     // borderWidth: 0,
   },
 };
