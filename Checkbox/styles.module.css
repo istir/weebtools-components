@@ -1,0 +1,106 @@
+.container {
+    --width: 20px;
+    --height: 20px;
+    display: flex;
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--cosmos);
+    border: 2px solid var(--lavender-blush);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    align-items: center;
+    padding: 2px;
+    transition-duration: var(--standard-transition);
+    transition-property: border-color, background-color;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.mobile {
+    --width: calc(var(--width) + 5px);
+    --height: calc(var(--height) + 5px);
+    padding: 5px;
+    font-size: 110%;
+}
+
+.checkContainer {
+    transition-duration: var(--standard-transition);
+    transition-property: transform, background-color;
+}
+
+.icon {
+    transform: scale(0.67);
+    opacity: 0;
+    display: block;
+    transition: var(--standard-transition);
+    transition-property: color, opacity, transform;
+}
+
+@keyframes checkedAnimation {
+    0% {
+        transform: scale(0.67);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes checkedAnimationReverse {
+    100% {
+        transform: scale(0.67);
+        opacity: 0;
+    }
+
+    20% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.container[data-checked="true"] .icon {
+    /* transform: scale(1); */
+    /* opacity: 1; */
+    animation-name: checkedAnimation;
+    animation-duration: var(--standard-transition);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+
+}
+
+.container[data-checked="false"] .icon {
+    animation-name: checkedAnimationReverse;
+    animation-duration: var(--standard-transition);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+:global(body.dark) :local(.container) {
+    background-color: var(--solid-pink);
+    border-color: var(--shady-lady);
+}
+
+:global(body.dark) :local(.checkContainer) {
+    background-color: var(--crater-brown);
+}
+
+:global(body.dark) :local(.icon) {
+    color: var(--offwhite);
+}
