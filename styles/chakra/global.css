@@ -1,4 +1,7 @@
 :root {
+
+    --app-background: hsl(343, 100%, 98.5%);
+
     --main-50: #994061;
     --main-100: #9f4867;
     --main-150: #a54f6e;
@@ -124,7 +127,7 @@
 }
 
 html[data-theme="dark"] {
-
+    --app-background: hsl(338, 41%, 10%);
 
     --main-50: #ffcbda;
     --main-100: #f9c3d3;
@@ -246,4 +249,61 @@ html[data-theme="dark"] {
     --mixed-opacity-850: #35232870;
     --mixed-opacity-900: #2a191e70;
     --mixed-opacity-950: #200f1570;
+}
+
+
+button,
+.chakra-switch {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* sidebar */
+
+
+.ps-sidebar-root {
+    border: none !important;
+}
+
+.ps-sidebar-container {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+.ps-menu-button {
+    background-color: var(--sidebar-button);
+    transition-duration: var(--sidebar-button-transition-duration);
+    transition-timing-function: var(--sidebar-button-transition-timing);
+}
+
+.ps-submenu-content {
+    background-color: transparent !important;
+}
+
+.ps-menu-label {
+    display: flex;
+    align-self: center;
+    transition: var(--sidebar-button-transition-duration);
+    transition-timing-function: var(--sidebar-button-transition-timing);
+}
+
+.ps-menuitem-root.collapsed .ps-menu-label {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ps-menuitem-root.collapsed .ps-subenu-content {
+    display: none !important;
+}
+
+.ps-menuitem-root .ps-submenu-expand-icon {
+    transform: none !important;
+    top: unset !important;
+    align-self: center;
+}
+
+.ps-submenu-expand-icon>span {
+    width: 10px;
+    height: 10px;
 }

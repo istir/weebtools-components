@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
 import { faAdd, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { compact } from "lodash";
@@ -42,9 +42,12 @@ function ArrayInput({ values, getArrayValue }: Props) {
             setValueHandler(index, newValue);
           }}
         />
-        <Button onClick={() => removeOneHandler(index)}>
-          <FontAwesomeIcon icon={faMinus} />
-        </Button>
+        <IconButton
+          variant={"gray"}
+          onClick={() => removeOneHandler(index)}
+          icon={<FontAwesomeIcon icon={faMinus} />}
+          aria-label={"Remove"}
+        />
       </Flex>
     );
   }
@@ -53,9 +56,12 @@ function ArrayInput({ values, getArrayValue }: Props) {
     <Flex flexDir={"column"} gap={2}>
       {inputValues?.map((value, index) => renderValue(value, index))}
       <Flex alignSelf={"flex-end"}>
-        <Button onClick={addMoreHandler} variant="filled">
-          <FontAwesomeIcon icon={faAdd} />
-        </Button>
+        <IconButton
+          onClick={addMoreHandler}
+          variant="filled"
+          icon={<FontAwesomeIcon icon={faAdd} />}
+          aria-label={"Add more"}
+        />
       </Flex>
     </Flex>
   );

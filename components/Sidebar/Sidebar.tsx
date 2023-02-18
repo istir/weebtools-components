@@ -1,23 +1,14 @@
 import { memo } from "react";
 
-import {
-  Props,
-  SidebarMainButtonType,
-  SidebarSubMenuButtonType,
-} from "./types";
+import { Props, SidebarMainButtonType } from "./types";
 import { Sidebar as RPSidebar, Menu, useProSidebar } from "react-pro-sidebar";
 import Button from "../Button/Button";
-import {
-  faBars,
-  faBarsStaggered,
-  faTablet,
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import ForegroundContainer from "../ForegroundContainer/ForegroundContainer";
 import SidebarMenuButton from "./SidebarMenuButton/SidebarMenuButton";
 import SidebarSubMenuButton from "./SidebarSubMenuButton/SidebarSubMenuButton";
 import { Box, Flex } from "@chakra-ui/react";
-function Sidebar({ buttons }: Props) {
+function Sidebar({ buttons, footer }: Props) {
   const { toggled, collapsed, collapseSidebar } = useProSidebar();
   const onSidebarToggleButtonClick = () => {
     collapseSidebar();
@@ -76,13 +67,16 @@ function Sidebar({ buttons }: Props) {
         onClick={onSidebarToggleButtonClick}
         transitionProperty="margin-left"
       />
-      <RPSidebar>
-        <Menu>
-          {buttons?.map((button, index) => (
-            <Box key={index}>{renderMenuButton(button)}</Box>
-          ))}
-        </Menu>
-      </RPSidebar>
+      <Flex justifyContent={"space-between"} flexDir={"column"} height="full">
+        <RPSidebar>
+          <Menu>
+            {buttons?.map((button, index) => (
+              <Box key={index}>{renderMenuButton(button)}</Box>
+            ))}
+          </Menu>
+        </RPSidebar>
+        {footer ? <Box>{footer}</Box> : null}
+      </Flex>
     </Flex>
   );
 }

@@ -1,6 +1,5 @@
 import { memo } from "react";
 
-import { combineStyle } from "../../../styles/theme";
 import { Props } from "./types";
 import { SubMenu } from "react-pro-sidebar";
 import Button from "../../Button/Button";

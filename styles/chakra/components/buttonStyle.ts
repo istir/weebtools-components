@@ -1,4 +1,4 @@
-import { createStyle } from "../../theme";
+import { defineStyle } from "@chakra-ui/react";
 
 const BASE_BUTTON_STYLES = {
   color: "main.100",
@@ -11,7 +11,7 @@ const BASE_BUTTON_ACTIVE_STYLES = {
   filter: "saturate(1.25)",
   transform: "scale(0.95)",
 };
-export const buttonTheme = createStyle({
+export const buttonTheme = defineStyle({
   variants: {
     plain: {
       ...BASE_BUTTON_STYLES,

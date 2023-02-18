@@ -2,7 +2,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export type Props = {
   buttons: SidebarButtons;
-  // footer:JSX
+  footer?: JSX.Element;
 };
 
 export type SidebarMainButtonType = {

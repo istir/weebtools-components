@@ -7,4 +7,5 @@ export type Props = {
   state?: boolean;
   notClickable?: boolean;
   label?: string;
+  backgroundColor?: string;
 };

@@ -1,3 +1,3 @@
-import Checkbox from '@/components/Base/Checkbox/Checkbox';
+import Checkbox from "./Checkbox";
 
 export default Checkbox;

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { forwardRef, memo } from "react";
+import { forwardRef } from "react";
 
-import { Box, Button as ChakraButton, Flex, Text } from "@chakra-ui/react";
+import { Button as ChakraButton, Flex, Text } from "@chakra-ui/react";
 import { Props } from "./types";
 
 const Button = forwardRef(

@@ -10,7 +10,7 @@ const baseStyle = definePartsStyle({});
 const variants = {
   filled: definePartsStyle({
     field: {
-      bg: "sub.800",
+      bg: "sub-opacity.800",
       borderRadius: DEFAULT_BORDER_RADIUS,
       backdropBlur: 10,
       _hover: {

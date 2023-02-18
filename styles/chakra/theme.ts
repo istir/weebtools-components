@@ -1,5 +1,4 @@
-import { extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { StyleFunctionProps } from "@chakra-ui/styled-system";
+import { extendTheme } from "@chakra-ui/react";
 import { switchTheme } from "./components/switchStyle";
 import { inputTheme } from "./components/inputStyle";
 import { buttonTheme } from "./components/buttonStyle";
@@ -11,13 +10,11 @@ export const theme = extendTheme({
   useSystemColorMode: true,
   colors: colors,
   styles: {
-    global: (props: StyleFunctionProps) => ({
+    global: {
       body: {
-        bg: props.colorMode === "dark" ? "sub.100" : "sub.50",
-        transitionProperty: "all",
-        transitionDuration: "normal",
+        bg: "var(--app-background)",
       },
-    }),
+    },
     config: {
       disableTransitionOnChange: false,
     },
