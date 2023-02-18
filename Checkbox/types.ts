@@ -6,4 +6,5 @@ export type Props = {
   pillStyle?: React.CSSProperties;
   state?: boolean;
   notClickable?: boolean;
+  label?: string;
 };

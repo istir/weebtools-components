@@ -1,13 +1,12 @@
-import { faAdd, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { compact } from 'lodash';
-import { memo, useEffect, useState } from 'react';
+import { Flex } from "@chakra-ui/react";
+import { faAdd, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { compact } from "lodash";
+import { memo, useEffect, useState } from "react";
+import Button from "../Button";
+import Input from "../Input";
 
-import styles from './styles.module.css';
-import { Props } from './types';
-
-import Button from '@/components/Base/Button';
-import Input from '@/components/Base/Input';
+import { Props } from "./types";
 
 function ArrayInput({ values, getArrayValue }: Props) {
   const [inputValues, setInputValues] = useState<string[]>(compact(values));
@@ -17,7 +16,7 @@ function ArrayInput({ values, getArrayValue }: Props) {
   }, [inputValues]);
 
   const addMoreHandler = () => {
-    setInputValues((prevInputValues) => [...prevInputValues, '']);
+    setInputValues((prevInputValues) => [...prevInputValues, ""]);
   };
 
   const removeOneHandler = (index: number) => {
@@ -36,29 +35,29 @@ function ArrayInput({ values, getArrayValue }: Props) {
 
   function renderValue(value: string, index: number) {
     return (
-      <div key={index} className={styles.inputContainer}>
-        <div className={styles.inputContainerInner}>
-          <Input
-            value={value}
-            getValue={(newValue) => {
-              setValueHandler(index, newValue);
-            }}
-          />
-        </div>
+      <Flex key={index} gap={2}>
+        <Input
+          value={value}
+          getValue={(newValue) => {
+            setValueHandler(index, newValue);
+          }}
+        />
         <Button onClick={() => removeOneHandler(index)}>
           <FontAwesomeIcon icon={faMinus} />
         </Button>
-      </div>
+      </Flex>
     );
   }
 
   return (
-    <div className={styles.container}>
+    <Flex flexDir={"column"} gap={2}>
       {inputValues?.map((value, index) => renderValue(value, index))}
-      <Button onClick={addMoreHandler}>
-        <FontAwesomeIcon icon={faAdd} />
-      </Button>
-    </div>
+      <Flex alignSelf={"flex-end"}>
+        <Button onClick={addMoreHandler} variant="filled">
+          <FontAwesomeIcon icon={faAdd} />
+        </Button>
+      </Flex>
+    </Flex>
   );
 }
 

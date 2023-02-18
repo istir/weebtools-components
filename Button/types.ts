@@ -1,13 +1,13 @@
+import { ButtonProps } from "@chakra-ui/react";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
-import React, { ButtonHTMLAttributes } from "react";
+import React from "react";
 
 export type Props = {
   badge?: string;
   buttonState?: "active" | "inactive";
-  buttonType?: "plain" | "gray" | "tinted" | "filled";
+  variant?: ButtonProps["variant"];
   stretch?: boolean;
-  children?: JSX.Element;
+  children?: JSX.Element | string;
   containerStyle?: React.CSSProperties;
   contentStyle?: React.CSSProperties;
   download?: string;
@@ -17,4 +17,4 @@ export type Props = {
   rightIcon?: IconDefinition;
   rightIconRotated?: boolean;
   size?: "small" | "medium" | "large";
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonProps;

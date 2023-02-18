@@ -1,31 +1,31 @@
 import { memo } from "react";
 
-import styles from "./styles";
 import { combineStyle } from "../../../styles/theme";
 import { Props } from "./types";
 import { SubMenu } from "react-pro-sidebar";
 import Button from "../../Button/Button";
+import { Box } from "@chakra-ui/react";
 
 function SidebarMenuButton({
   children,
   label,
   icon,
   collapsed = false,
+  onClick,
 }: Props) {
+  const onClickHandler = () => {
+    if (collapsed) {
+      onClick?.();
+    }
+  };
   return (
     <SubMenu
       label={label}
       className={`${collapsed ? "collapsed" : ""}`}
-      component={
-        <Button
-          buttonType="tinted"
-          containerStyle={styles.menuItemContainer}
-          style={styles.menuItem}
-          icon={icon}
-        />
-      }
+      onClick={onClickHandler}
+      component={<Button variant="tinted" icon={icon} />}
     >
-      {children}
+      <Box marginLeft={8}>{collapsed ? null : children}</Box>
     </SubMenu>
   );
 }

@@ -1,21 +1,22 @@
 import { memo } from "react";
 
-import styles from "./styles";
-import { combineStyle } from "../../../styles/theme";
 import { Props } from "./types";
 import Button from "../../Button/Button";
-import Text from "../../Text/Text";
+import { Flex, Text } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function SidebarSubMenuButton({ icon, label, onClick }: Props) {
+function SidebarSubMenuButton({
+  icon,
+  label,
+  onClick,
+  variant = "plain",
+}: Props) {
   return (
-    <Button
-      buttonType="plain"
-      containerStyle={styles.menuItemContainer}
-      style={combineStyle([styles.menuItem, styles.subMenuItem])}
-      onClick={onClick}
-      rightIcon={icon}
-    >
-      <Text style={styles.text}>{label}</Text>
+    <Button variant={variant} onClick={onClick}>
+      <Flex justifyContent={"space-between"} width="full">
+        <Text textAlign={"left"}>{label}</Text>
+        {icon ? <FontAwesomeIcon icon={icon} /> : null}
+      </Flex>
     </Button>
   );
 }

@@ -1,6 +1,5 @@
-import { memo, useEffect, useState } from "react";
-import { combineStyle, EMPTY_STYLE } from "../../styles/theme";
-import { styles } from "./styles";
+import { Switch } from "@chakra-ui/react";
+import { memo } from "react";
 
 import { Props } from "./types";
 
@@ -8,38 +7,15 @@ function Toggle({
   defaultState = false,
   onChecked = () => {},
   onUnchecked = () => {},
-  containerStyle = EMPTY_STYLE,
-  pillStyle = EMPTY_STYLE,
 }: Props) {
-  const [checked, setChecked] = useState<boolean>(defaultState);
-
-  useEffect(() => {
-    checked && onChecked();
-    !checked && onUnchecked();
-  }, [checked]);
-
-  const onClickHandler = () => {
-    setChecked((prevChecked) => !prevChecked);
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.currentTarget.checked) {
+      onChecked();
+    } else {
+      onUnchecked();
+    }
   };
-  return (
-    <button
-      className="toggle"
-      style={combineStyle([
-        styles.toggle,
-        checked ? styles.checked : styles.unchecked,
-        containerStyle,
-      ])}
-      onClick={onClickHandler}
-    >
-      <div
-        style={combineStyle([
-          styles.pill,
-          checked ? styles.pillChecked : styles.pillUnchecked,
-          pillStyle,
-        ])}
-      ></div>
-    </button>
-  );
+  return <Switch onChange={onChangeHandler} defaultChecked={defaultState} />;
 }
 
 export default memo(Toggle);
