@@ -1,35 +1,35 @@
-import { Flex, IconButton } from "@chakra-ui/react";
-import { faAdd, faMinus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { compact } from "lodash";
-import { memo, useEffect, useState } from "react";
-import Button from "../Button";
-import Input from "../Input";
+import { Flex, IconButton } from '@chakra-ui/react';
+import { faAdd, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { compact } from 'lodash';
+import { memo, useEffect, useState } from 'react';
 
-import { Props } from "./types";
+import { Props } from './types';
+
+import Input from '@/weebtools-components/components/Input';
 
 function ArrayInput({ values, getArrayValue }: Props) {
   const [inputValues, setInputValues] = useState<string[]>(compact(values));
 
   useEffect(() => {
     getArrayValue?.(inputValues);
-  }, [inputValues]);
+  }, [getArrayValue, inputValues]);
 
   const addMoreHandler = () => {
-    setInputValues((prevInputValues) => [...prevInputValues, ""]);
+    setInputValues((prevInputValues) => [...prevInputValues, '']);
   };
 
   const removeOneHandler = (index: number) => {
     setInputValues((prevInputValues) =>
-      prevInputValues.filter((_value, prevIndex) => prevIndex !== index)
+      prevInputValues.filter((_value, prevIndex) => prevIndex !== index),
     );
   };
 
   const setValueHandler = (index: number, newValue: string) => {
     setInputValues((prevInputValues) =>
       prevInputValues.map((prevInputValue, prevIndex) =>
-        prevIndex === index ? newValue : prevInputValue
-      )
+        prevIndex === index ? newValue : prevInputValue,
+      ),
     );
   };
 
@@ -43,24 +43,24 @@ function ArrayInput({ values, getArrayValue }: Props) {
           }}
         />
         <IconButton
-          variant={"gray"}
+          variant={'gray'}
           onClick={() => removeOneHandler(index)}
           icon={<FontAwesomeIcon icon={faMinus} />}
-          aria-label={"Remove"}
+          aria-label={'Remove'}
         />
       </Flex>
     );
   }
 
   return (
-    <Flex flexDir={"column"} gap={2}>
+    <Flex flexDir={'column'} gap={2}>
       {inputValues?.map((value, index) => renderValue(value, index))}
-      <Flex alignSelf={"flex-end"}>
+      <Flex alignSelf={'flex-end'}>
         <IconButton
           onClick={addMoreHandler}
           variant="filled"
           icon={<FontAwesomeIcon icon={faAdd} />}
-          aria-label={"Add more"}
+          aria-label={'Add more'}
         />
       </Flex>
     </Flex>

@@ -1,3 +1,3 @@
-import ArrayInput from "./ArrayInput";
+import ArrayInput from './ArrayInput';
 
 export default ArrayInput;

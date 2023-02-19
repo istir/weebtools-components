@@ -307,3 +307,7 @@ button,
     width: 10px;
     height: 10px;
 }
+
+.lazy-load-image-background {
+    max-height: inherit;
+}

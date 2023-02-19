@@ -1,5 +1,5 @@
-import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
-import { switchAnatomy } from "@chakra-ui/anatomy";
+import { switchAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(switchAnatomy.keys);
@@ -7,18 +7,18 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   container: {},
   thumb: {
-    bg: "main.900",
-    boxShadow: "md",
+    bg: 'main.900',
+    boxShadow: 'md',
   },
   track: {
-    bg: "main.400",
+    bg: 'main.400',
     _checked: {
-      bg: "main.100",
+      bg: 'main.100',
     },
   },
 });
 
 export const switchTheme = defineMultiStyleConfig({
   baseStyle,
-  defaultProps: { size: "lg" },
+  defaultProps: { size: 'lg' },
 });

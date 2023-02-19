@@ -1,33 +1,29 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { forwardRef } from "react";
+import { Button as ChakraButton, Flex, Text } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { forwardRef } from 'react';
 
-import { Button as ChakraButton, Flex, Text } from "@chakra-ui/react";
-import { Props } from "./types";
+import { Props } from './types';
 
 const Button = forwardRef(
   (
     {
       children,
-      variant = "plain",
-      size = "medium",
+      variant = 'plain',
+      size = 'medium',
       label,
       icon,
-      badge,
-      rightIcon,
-      stretch = false,
-      as = "button",
       ...props
     }: Props,
-    _ref
+    _ref,
   ) => {
     function getButtonSize() {
       switch (size) {
-        case "small":
-          return "sm";
-        case "medium":
-          return "md";
-        case "large":
-          return "lg";
+        case 'small':
+          return 'sm';
+        case 'medium':
+          return 'md';
+        case 'large':
+          return 'lg';
         default:
           return size;
       }
@@ -35,14 +31,14 @@ const Button = forwardRef(
 
     function getIconSize() {
       switch (size) {
-        case "small":
-          return "1x";
-        case "medium":
-          return "xl";
-        case "large":
-          return "2x";
+        case 'small':
+          return '1x';
+        case 'medium':
+          return 'xl';
+        case 'large':
+          return '2x';
         default:
-          return "1x";
+          return '1x';
       }
     }
 
@@ -61,19 +57,17 @@ const Button = forwardRef(
           className="button"
           variant={variant}
           size={getButtonSize()}
-          width={"full"}
-          height={label && "12"}
-          justifyContent={"center"}
+          width={'full'}
+          height={label && '12'}
+          justifyContent={'center'}
           alignItems="center"
-          flexDir={"column"}
-          {...props}
-        >
+          flexDir={'column'}
+          {...props}>
           <Flex
-            justifyContent={icon && children ? "space-between" : "center"}
+            justifyContent={icon && children ? 'space-between' : 'center'}
             width="full"
             gap={2}
-            alignItems="center"
-          >
+            alignItems="center">
             {renderIcon()}
             {children}
           </Flex>
@@ -81,7 +75,8 @@ const Button = forwardRef(
         </ChakraButton>
       </Flex>
     );
-  }
+  },
 );
 
+Button.displayName = 'Button';
 export default Button;

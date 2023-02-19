@@ -1,12 +1,12 @@
-import { defineStyleConfig } from "@chakra-ui/react";
+import { defineStyleConfig } from '@chakra-ui/react';
 
 export const spinnerTheme = defineStyleConfig({
   variants: {
     weeb: {
-      color: "main.100",
+      color: 'main.100',
     },
   },
   defaultProps: {
-    variant: "weeb",
+    variant: 'weeb',
   },
 });

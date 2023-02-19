@@ -1,3 +1,3 @@
-import ForegroundContainer from "./ForegroundContainer";
+import ForegroundContainer from './ForegroundContainer';
 
 export default ForegroundContainer;

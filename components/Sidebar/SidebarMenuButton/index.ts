@@ -1,3 +1,3 @@
-import SidebarMenuButton from "./SidebarMenuButton";
+import SidebarMenuButton from './SidebarMenuButton';
 
 export default SidebarMenuButton;

@@ -1,10 +1,11 @@
-import { extendTheme } from "@chakra-ui/react";
-import { switchTheme } from "./components/switchStyle";
-import { inputTheme } from "./components/inputStyle";
-import { buttonTheme } from "./components/buttonStyle";
-import { colors } from "./colors";
-import { spinnerTheme } from "./components/spinnerStyle";
-import { checkboxTheme } from "./components/checkboxStyle";
+import { extendTheme } from '@chakra-ui/react';
+
+import { colors } from './colors';
+import { buttonTheme } from './components/buttonStyle';
+import { checkboxTheme } from './components/checkboxStyle';
+import { inputTheme } from './components/inputStyle';
+import { spinnerTheme } from './components/spinnerStyle';
+import { switchTheme } from './components/switchStyle';
 
 export const theme = extendTheme({
   useSystemColorMode: true,
@@ -12,7 +13,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "var(--app-background)",
+        bg: 'var(--app-background)',
       },
     },
     config: {

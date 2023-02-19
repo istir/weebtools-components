@@ -1,7 +1,7 @@
-import { Switch } from "@chakra-ui/react";
-import { memo } from "react";
+import { Switch } from '@chakra-ui/react';
+import { memo } from 'react';
 
-import { Props } from "./types";
+import { Props } from './types';
 
 function Toggle({
   defaultState = false,

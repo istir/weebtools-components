@@ -1,9 +1,10 @@
-import { memo } from "react";
+import { Box } from '@chakra-ui/react';
+import { memo } from 'react';
+import { SubMenu } from 'react-pro-sidebar';
 
-import { Props } from "./types";
-import { SubMenu } from "react-pro-sidebar";
-import Button from "../../Button/Button";
-import { Box } from "@chakra-ui/react";
+import { Props } from './types';
+
+import Button from '@/weebtools-components/components/Button';
 
 function SidebarMenuButton({
   children,
@@ -20,10 +21,9 @@ function SidebarMenuButton({
   return (
     <SubMenu
       label={label}
-      className={`${collapsed ? "collapsed" : ""}`}
+      className={`${collapsed ? 'collapsed' : ''}`}
       onClick={onClickHandler}
-      component={<Button variant="tinted" icon={icon} />}
-    >
+      component={<Button variant="tinted" icon={icon} />}>
       <Box marginLeft={8}>{collapsed ? null : children}</Box>
     </SubMenu>
   );
